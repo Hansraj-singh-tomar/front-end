@@ -1,0 +1,95 @@
+.signup{
+    height: calc(100vh - 6rem - 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupWrapper{
+    width: 50%;
+    height: 60%;
+    background-color: #1d5c96;
+    /* background-color: #828282; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.inputBox{
+    margin: 0 12rem;
+    height: 3rem;
+    border: none;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.inputBox::placeholder{
+    font-size: 1.5rem;
+}
+
+
+input:focus{
+    border: none;
+    outline: none;
+}
+
+.btn{
+    margin: 0 22rem;
+    border: .2rem solid #fff;
+    height: 4rem;
+    font-weight: 500;
+    font-size: 1.7rem;
+    border-radius: 1rem;
+    border: none;
+    color: gray;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #fff;
+    background-color: gray;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.signupWrapper span{
+    color: red;
+    margin-left: 12rem;
+    font-size: 1.5rem;
+    opacity: .9;
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 480px) {
+    .signupWrapper{
+      width: 90%;
+      height: 50%;
+    }
+
+    .inputBox{
+        margin: -2rem 8rem;
+        height: 5rem;
+        border: none;
+    }
+    
+
+    .inputBox::placeholder{
+        font-size: 12px;
+        color: black;
+    }
+
+    .btn{
+        margin: 0 15rem;
+        height: 5rem;
+        font-weight: 500;
+        font-size: 2.6rem;
+        color: black;
+    }
+}
