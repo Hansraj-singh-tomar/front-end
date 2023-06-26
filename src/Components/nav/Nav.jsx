@@ -25,8 +25,8 @@ const Nav = () => {
                 <ul>
                     <li><NavLink to="/">Products</NavLink></li>
                     <li><NavLink to="/add">Add Product</NavLink></li>
-                    <li><NavLink to="/update">Update Product</NavLink></li>
-                    <li><NavLink to="/profile">Profile</NavLink></li>
+                    {/* <li><NavLink to="/update">Update Product</NavLink></li>
+                    <li><NavLink to="/profile">Profile</NavLink></li> */}
                     <li><NavLink onClick={logout} to="/signup">Logout ({JSON.parse(auth).name})</NavLink></li>
                 </ul>
             </div>

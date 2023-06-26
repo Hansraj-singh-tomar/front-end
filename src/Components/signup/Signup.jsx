@@ -23,10 +23,11 @@ const Signup = () => {
   async function handleSubmit(){
 
     if(!name || !email || !password){
-        setError(true)
+        setError(true);
+        return false;
     }
 
-      console.log(name, email, password);
+    //   console.log(name, email, password);
       let data = {name, email, password};
 
     //   let result = await fetch("http://localhost:5000/register", {
@@ -40,9 +41,12 @@ const Signup = () => {
       })
       result = await result.json();
       console.log(result);
-      if(result && error){
+      if(result){
+          alert("user registered")
           localStorage.setItem("user", JSON.stringify(result))
           navigate('/');
+      }else{
+        alert('something is fissy')
       }
   }
 

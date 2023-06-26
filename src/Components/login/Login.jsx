@@ -21,6 +21,7 @@ const Login = () => {
 
     if(!email || !password){
       setError(true);
+      return false;
     }
     // console.log(email, password);
     let data = {email, password}
@@ -36,7 +37,7 @@ const Login = () => {
     });
     result = await result.json();
     // console.log(result);
-    if(result && error){
+    if(result){
       localStorage.setItem("user", JSON.stringify(result))
       navigate("/");
     }else{
