@@ -8,6 +8,7 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
   
   const navigate = useNavigate();
   
@@ -20,6 +21,11 @@ const Signup = () => {
   
 
   async function handleSubmit(){
+
+    if(!name || !email || !password){
+        setError(true)
+    }
+
       console.log(name, email, password);
       let data = {name, email, password};
 
@@ -34,7 +40,7 @@ const Signup = () => {
       })
       result = await result.json();
       console.log(result);
-      if(result){
+      if(result && error){
           localStorage.setItem("user", JSON.stringify(result))
           navigate('/');
       }
@@ -44,9 +50,16 @@ const Signup = () => {
     <div className='signup'>
         <div className="signupWrapper">
             <h1>Register User</h1>
+            
             <input className='inputBox' value={name} type="text" placeholder='Enter Your Name' onChange={(e) => setName(e.target.value)}/>
+            {error && !email && <span>Enter Valid Name</span>}
+
             <input className='inputBox' value={email} type="text" placeholder='Enter Your Email' onChange={(e) => setEmail(e.target.value)}/>
+            {error && !email && <span>Enter Valid Email</span>}
+
             <input className='inputBox' value={password} type="number" placeholder='Enter Your Password' onChange={(e) => setPassword(e.target.value)}/>
+            {error && !email && <span>Enter Valid password</span>}
+
             <button onClick={handleSubmit} className='btn'>Submit</button>
         </div>
     </div>
